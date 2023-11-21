@@ -124,4 +124,9 @@
 			return; //Beende die Funktion
         Console.WriteLine(4 / x);
     }
+
+	static void PrintWochentag(DayOfWeek d) //Bestimmte Werte erzwingen als Enum Funktionsparametertyp
+	{
+        Console.WriteLine(d);
+    }
 }
