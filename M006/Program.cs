@@ -48,10 +48,10 @@ public class Program
 		//Realität
 		Kurs k = new Kurs("C# Grundkurs", 4, new DateTime(2023, 11, 21), new DateTime(2023, 11, 24));
 		Person trainer = new Person("Lukas", "Kern", 25);
-		Person dw = new Person("Daniel", "Wölfer", 30);
-		Person cb = new Person("Christian", "Baumann", 38);
-		Person rf = new Person("Raffael", "Fischer", 18);
-		Person ms = new Person("Max", "Schneider", 26);
+		Person dw = new Person("", "", 30);
+		Person cb = new Person("", "", 38);
+		Person rf = new Person("", "", 18);
+		Person ms = new Person("", "", 26);
 		k.Trainer = trainer;
 		//k.TeilnehmerHinzufuegen(dw);
 		//k.TeilnehmerHinzufuegen(cb);
