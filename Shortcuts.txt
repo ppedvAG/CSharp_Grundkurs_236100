@@ -1,1 +1,2 @@
 Strg + .: Schnelloptionen unter dem Cursor anzeigen
+Strg + K, Strg + D: Code formatieren
