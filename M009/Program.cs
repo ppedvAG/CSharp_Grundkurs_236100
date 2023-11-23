@@ -1,6 +1,4 @@
-﻿using static System.Net.Mime.MediaTypeNames;
-
-namespace M009;
+﻿namespace M009;
 
 public class Program
 {
