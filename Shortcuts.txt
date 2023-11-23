@@ -3,3 +3,5 @@ Strg + K, Strg + D: Code formatieren
 Strg + R, Strg + R: Typ/Variable/Funktion umbenennen
 Strg + K, Strg + C: Code auskommentieren
 Strg + K, Strg + U: Code einkommentieren
+Alt + Pfeil Hoch/Herunter: Derzeitige Zeile verschieben
+Strg + D: Kopiert die derzeitige Zeile
