@@ -1,3 +1,5 @@
 Strg + .: Schnelloptionen unter dem Cursor anzeigen
 Strg + K, Strg + D: Code formatieren
 Strg + R, Strg + R: Typ/Variable/Funktion umbenennen
+Strg + K, Strg + C: Code auskommentieren
+Strg + K, Strg + U: Code einkommentieren
