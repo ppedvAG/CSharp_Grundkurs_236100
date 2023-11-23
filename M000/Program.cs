@@ -1,71 +1,61 @@
-﻿while (true)
+﻿using M000;
+using System.Linq.Expressions;
+
+public class Program
 {
-	double zahl1 = ZahlEingabe("Gib die erste Zahl ein: ");
-	double zahl2 = ZahlEingabe("Gib die zweite Zahl ein: ");
-
-	foreach (Operation operation in Enum.GetValues<Operation>())
-		Console.WriteLine($"{(int) operation}: {operation}");
-
-	Operation op = RechenoperationEingabe();
-
-	double ergebnis = Berechne(zahl1, zahl2, op);
-
-    Console.WriteLine("Enter drücken zum Wiederholen");
-	if (Console.ReadKey(true).Key != ConsoleKey.Enter)
-		break;
-	Console.Clear();
-}
-
-double Berechne(double zahl1, double zahl2, Operation op)
-{
-	switch (op)
+	static void Main(string[] args)
 	{
-		case Operation.Addition:
-			Console.WriteLine($"{zahl1} + {zahl2} = {zahl1 + zahl2}");
-			return zahl1 + zahl2;
-		case Operation.Subtraktion:
-			Console.WriteLine($"{zahl1} - {zahl2} = {zahl1 - zahl2}");
-			return zahl1 - zahl2;
-		case Operation.Multiplikation:
-			Console.WriteLine($"{zahl1} * {zahl2} = {zahl1 * zahl2}");
-			return zahl1 * zahl2;
-		case Operation.Division:
-			if (zahl2 != 0)
-			{
-				Console.WriteLine($"{zahl1} / {zahl2} = {zahl1 / zahl2}");
-				return zahl1 / zahl2;
-			}
-			else
-			{
-				Console.WriteLine("Teilung durch 0 ist nicht möglich!");
-				return double.NaN;
-			}
-		default:
-			Console.WriteLine("Fehler");
-			return double.NaN;
-	}
-}
+		PKW p = new PKW("VW", 20000, 250, 5);
+		Console.WriteLine(p.Info());
 
-double ZahlEingabe(string text)
-{
-	double result;
-	bool funktioniert;
-	while (true)
+		Fahrzeug[] fzg = new Fahrzeug[10];
+		for (int i = 0; i < fzg.Length; i++)
+		{
+			fzg[i] = Fahrzeug.GeneriereFahrzeug($"Fahrzeug{i}");
+			Console.WriteLine(fzg[i].ToString());
+		}
+
+		int pkw = 0, schiff = 0, flugzeug = 0;
+		foreach (Fahrzeug f in fzg)
+		{
+			switch (f)
+			{
+				case PKW:
+					pkw++;
+					break;
+				case Schiff:
+					schiff++;
+					break;
+				case Flugzeug:
+					flugzeug++;
+					break;
+			}
+		}
+
+		//fzg
+		//	.GroupBy(e => e.GetType())
+		//	.ToDictionary(e => e.Key, e => e.Count());
+
+		Console.WriteLine($"Es wurden {pkw} PKWs, {schiff} Schiffe und {flugzeug} Flugzeuge produziert");
+		fzg[2].Hupen();
+	}
+
+	static void TesteBelade(Fahrzeug f1, Fahrzeug f2)
 	{
-        Console.WriteLine(text);
-		funktioniert = double.TryParse(Console.ReadLine(), out result);
-		if (funktioniert)
-			return result;
-	}
-}
+		if (f1 == f2)
+            Console.WriteLine("Ein Fahrzeug kann sich nicht selbst laden");
 
-Operation RechenoperationEingabe()
-{
-	double eingabe = ZahlEingabe("Gib eine Rechenoperation ein: ");
-	return (Operation) eingabe;
-}
-
-enum Operation
-{
-	Addition = 1, Subtraktion, Multiplikation, Division
+        if (f1 is IBeladbar)
+		{
+			IBeladbar b = (IBeladbar)f1;
+			b.Belade(f2);
+		}
+		else if (f2 is IBeladbar)
+		{
+			IBeladbar b = (IBeladbar) f2;
+			b.Belade(f1);
+		}
+		else
+            Console.WriteLine("Keines der beiden Fahrzeuge ist beladbar");
+    }
 }
