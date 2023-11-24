@@ -1,0 +1,12 @@
+﻿<Window x:Class="M017.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="450" Width="800"
+		WindowStartupLocation="CenterScreen"
+		SizeToContent="Width">
+	<DataGrid Margin="10, 0, 10, 10" Name="DG"
+			  CanUserAddRows="False" CanUserDeleteRows="False"
+			  CanUserReorderColumns="False"
+			  CanUserResizeColumns="False" CanUserResizeRows="False">
+	</DataGrid>
+</Window>
