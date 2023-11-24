@@ -1,0 +1,15 @@
+﻿<Window x:Class="M014_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="450" Width="300">
+	<Grid Margin="10">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Button Click="Button_Click" Content="Start Component"/>
+		<ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Visible" Grid.Row="1" Name="SV">
+			<TextBlock x:Name="TB" SizeChanged="TB_SizeChanged"/>
+		</ScrollViewer>
+	</Grid>
+</Window>

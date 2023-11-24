@@ -5,3 +5,4 @@ Strg + K, Strg + C: Code auskommentieren
 Strg + K, Strg + U: Code einkommentieren
 Alt + Pfeil Hoch/Herunter: Derzeitige Zeile verschieben
 Strg + D: Kopiert die derzeitige Zeile
+F12: Springe zur Definition
